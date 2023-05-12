@@ -1,0 +1,133 @@
+@charset "utf-8";
+
+:root {
+    --app-dark-bg: #1a1c24;
+    --app-light-gray: #f9f9f9;
+    --app-red-button: #ff3737;
+    --app-red-button-hover: #b00000;
+}
+
+body {
+    display: grid;
+    place-content: center;
+    background-color: var(--app-dark-bg);
+    overflow: hidden;
+}
+
+h1 {
+    color: var(--app-light-gray);
+    text-align: center;
+    font-weight: 600;
+}
+
+.star-rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    position: relative;
+}
+  
+.star-rating svg {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.gold {
+    color: #e0e041;
+}
+
+.gray {
+    color: #808080;
+}
+
+.star {
+    cursor: pointer;
+    transition: color 200ms;
+}
+  
+
+h2 {
+    text-align: center;
+    color: var(--app-light-gray);
+}
+
+.message {
+    height: 50px;
+    font-weight: 400;
+}
+  
+button {
+    width: 130px;
+    height: 40px;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 50px;
+    color: #fff;
+    background-color: var(--app-red-button);
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background-color: var(--app-red-button-hover);
+}
+
+.dialog {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--app-light-gray);
+    padding: 10px;
+    border-radius: 5px;
+    width: 320px;
+    height: 200px;
+    box-shadow: 2px 2px 2px rgb(0 0 0 / 0.1);
+    animation: 0.25s linear anim;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    place-items: center;
+    text-align: center;
+}
+
+  @keyframes anim {
+    from {
+        opacity: 0;
+        translate: 0 -8px;
+    } to {
+        opacity: 1;
+        translate: 0 0;
+    }
+}
+
+dialog::backdrop {
+    background-color: rgb(13 16 19 / 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.dialog h3 {
+    padding: 5px;
+    
+}
+.dialog p {
+    padding: 5px;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+.open-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 40px;
+}
+
+.close-btn {
+    margin-top: 10px;
+}
