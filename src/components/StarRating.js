@@ -5,7 +5,7 @@ import { useState } from "react";
 
     const [selectedStars, setSelectedStars] = useState(0);
 
-    function getRatingDescription(rating) {
+    function showRatingMessage(rating) {
         if (rating === 1) return 'Terrible';
         if (rating === 2) return 'Bad';
         if (rating === 3) return 'Regular';
@@ -25,7 +25,7 @@ import { useState } from "react";
                 />
                 ))}
             </div>
-            <h2 className="message">{getRatingDescription(selectedStars)}</h2>
+            <h2 className="message">{showRatingMessage(selectedStars)}</h2>
         </div>
     );
   }
